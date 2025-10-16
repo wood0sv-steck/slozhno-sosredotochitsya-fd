@@ -10,15 +10,20 @@ body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
   margin: 0 auto;
+}
+.page{
   font-family: 'IBM Plex Mono';
-  font-size: 18px;
-  font-weight: 400;
+  font-size: var(--font-size-general);
+  font-weight: var(--font-weight-general);
   line-height: 23.4px;
 }
+h2{
+  font-size: var(--font-size-general);
+  font-weight: var(--font-weight-accident);
+}
 h3 {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: var(--font-size-general);
+  font-weight: var(--font-weight-accident);
 }
 
 h1,

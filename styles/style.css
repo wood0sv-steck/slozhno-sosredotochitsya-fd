@@ -2,25 +2,41 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-image: var(--background-image-page-dark);
   background-color: #000028;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  background-image: var(--background-image-page-dark);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
 }
 .header {
   display: grid;
   max-height: 100vw;
   min-height: 668px;
   grid-template-columns: 1fr;
-  grid-template-rows: 27% 1fr 31%;
+  grid-template-rows: 27% 1fr 35%;
 }
-.REC-decoration {
-  display: grid;
-  justify-self: end;
-  margin-block-start: 10px;
+.rec-decoration {
+  position:absolute;
+  top:calc(var(--indention-global) + 6px);
+  right:calc(var(--indention-global) + 20px);
+  font-family: 'IBM Plex Mono';
+  font-weight: 400;
+  font-size: 18px;
+  text-align: right;
+  color:var(--color-title);
+}
+.rec-decoration::after{
+  position: absolute;
+  content:'';
+  width:6px;
+  height: 6px;
+  border:5px solid var(--color-title);
+  border-radius: 100%;
+  box-shadow:0 0 20px var(--color-title) ;
+  top:var(--indention-global);
+  right:var(--indention-global);
 }
 .header__theme-menu {
   display: grid;
@@ -53,30 +69,74 @@
   border-image-repeat: initial;
 }
 .title {
-  font-family: "IBM Plex Mono";
-  font-weight: 700;
+  font-family: 'IBM Plex Mono';
+  font-weight: var(--font-weight-accident);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
+  color:#DB00FF;
+  text-shadow: 4px 4px 0 var(--color-title);
+  @media (width >= 768px) {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
 .header__title-paragraph {
-  font-size: 18px;
-  line-height: 23.4px;
+  font-size: var(--font-size-general);
 }
-.content-section__title {
-  color: var(--color-title);
-}
-.text-block__title {
-  color: var(--color-text-title);
+
+.title-decor {
   background-color: var(--bacground-color-title);
+  color: var(--color-text-title);
+}
+.main {
+  display: grid;
+  padding-block-start:var(--indention-section);
+  gap: 50px;
+}
+.content-section {
+  display: grid;
+  gap: 20px;
+  @media (width >= 768px) {
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+    @media (width >= 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+    }
+  }
+}
+.text-block {
+  display: grid;
+  gap: 20px;
+    @media (width >= 1024px) {
+    grid-column:2/ span 2;
+  }
+}
+.text-block__subtitle,
+.text-block__title{
+  margin-block-end: 10px;
 }
 .text-block__content {
   color: var(--color-text-paragraph);
 }
-.text-block__subtitle {
-  background-color: var(--bacground-color-title);
-  color: var(--color-text-title);
+.content-section__title {
+  color: var(--color-title);
+  @media (width >= 768px) {
+  }
+}
+.text-block__digest{
+display:grid;
+gap:20px;
+}
+.text-block__subtitle-content{
+margin-block-end:20px;
 }
 
-/* .gallery{
- object-fit: 100%;
-} */
+.causes {
+  .text-block {
+    grid-column: 1/-1;
+    @media (width >= 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+}
