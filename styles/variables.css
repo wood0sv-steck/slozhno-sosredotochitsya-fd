@@ -11,13 +11,15 @@
   --font-size-general: 18px;
   --font-weight-general: 400;
   --font-weight-accident: 700;
-  --indention-section: 40px;
-  --indention-global:10px;
-  --indantion-title:20px;
-
+  --indention-header: 40px;
+  --indention-section: 50px;
+  --indention-global: 10px;
+  --indantion-title: 20px;
 }
 @media (width >= 768px) {
   :root {
-    --indention-bottom: 60px;
+    --indention-header: 60px;
+    --indention-section: 80px;
+    --indention-global: 20px;
   }
 }
