@@ -1,98 +1,128 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  position: relative;
   background-color: #000028;
   padding-inline-start: var(--indention-global);
   padding-inline-end: var(--indention-global);
-  background-image: var(--background-image-page-dark);
+  background-image: var(--background-image-page);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .header {
+  position: relative;
   display: grid;
   max-height: 100vw;
   min-height: 668px;
   grid-template-columns: 1fr;
-  grid-template-rows: 27% 1fr 35%;
+  grid-template-rows: 36% 1fr 27%;
+  align-items: center;
   @media (width >= 768px) {
+    grid-template-rows: 45% 1fr 45%;
     min-height: 1024px;
   }
   @media (width >= 1024px) {
     min-height: 768px;
+    grid-template-rows: 45% 1fr 45%;
+    align-items: flex-start;
   }
 }
 .rec-decoration {
   position: absolute;
-  top: calc(var(--indention-global) + 6px);
-  right: calc(var(--indention-global) + 20px);
+  top: calc(var(--indention-global) + 1px);
+  right: calc(var(--indention-global) + 19px);
   font-family: "IBM Plex Mono";
   font-weight: 400;
   font-size: 18px;
   text-align: right;
-  color: var(--color-title);
+  color: var(--color-title-accident);
 }
-.rec-decoration::after {
+.rec-decoration::before {
   position: absolute;
   content: "";
-  width: 6px;
-  height: 6px;
-  border: 5px solid var(--color-title);
+  width: 9px;
+  height: 9px;
+  box-shadow: 0px 0px 4px 2px;
+  background-color: var(--color-title-accident);
+  top: calc(var(--indention-global) - 1px);
+  right: -20px;
   border-radius: 100%;
-  box-shadow: 0 0 20px var(--color-title);
-  top: var(--indention-global);
-  right: var(--indention-global);
 }
-.header__theme-menu {
-  display: grid;
-  justify-self: end;
-  align-self: center;
+.header::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--color-title-accident);
+  border-right: 1px solid var(--color-title-accident);
+  right: 0;
+  top: 10px;
+}
+.header::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--color-title-accident);
+  border-left: 1px solid var(--color-title-accident);
+  left: 0;
+  bottom: 10px;
 }
 .header__theme-menu-list {
-  display: grid;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  gap: 13px;
+  @media (width >= 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    margin-block-start: 20px;
+  }
+}
+.header__theme-menu-button_active {
+  outline: 1px solid var(--color-menu);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--color-menu);
+}
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--color-menu);
 }
 .header__theme-menu-button {
-  color: #ff0070;
-  border-top-width: initial;
-  border-right-width: initial;
-  border-left-width: initial;
-  border-bottom-width: initial;
-  background-color: initial;
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
-  border-left-style: none;
-  border-top-color: initial;
-  border-right-color: initial;
-  border-left-color: initial;
-  border-bottom-color: initial;
-  border-image-source: initial;
-  border-image-slice: initial;
-  border-image-width: initial;
-  border-image-outset: initial;
-  border-image-repeat: initial;
+  color: var(--color-menu);
+  padding: 0 13px;
+  background-color: transparent;
+  border-style: none;
+  text-transform: lowercase;
 }
 .title {
+  display: grid;
+  align-self: start;
   font-family: "IBM Plex Mono";
   font-weight: var(--font-weight-accident);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  color: #db00ff;
-  text-shadow: 4px 4px 0 var(--color-title);
+  color: var(--color-title);
+  text-shadow: 4px 4px 0 var(--color-title-shadow);
   @media (width >= 768px) {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 .header__title-paragraph {
   font-size: var(--font-size-general);
+  justify-self: end;
+  max-width: 365px;
+  @media (width >= 1024px) {
+    max-width: 491px;
+  }
 }
-
 .title-decor {
   background-color: var(--bacground-color-title);
   color: var(--color-text-title);
-  margin-block-end: 20px;
+  font-size: var(--font-size-general);
+  font-weight: var(--font-weight-accident);
 }
 .main {
   display: grid;
@@ -120,11 +150,14 @@
 .text-block__title {
   margin-block-end: 10px;
 }
+.text-block__subtitle-title {
+  margin-block-end: 20px;
+}
 .text-block__content {
   color: var(--color-text-paragraph);
 }
 .content-section__title {
-  color: var(--color-title);
+  color: var(--color-title-accident);
 }
 
 .text-block__subtitle-content:not(:last-child) {
@@ -140,16 +173,20 @@
   }
 }
 .gallery-section-image {
-  margin: 0;
   box-sizing: border-box;
-  object-fit: cover;
+  margin: 0;
+  padding: 0;
 }
+
 .gallery-section {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 10px;
   @media (width >= 768px) {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-block-size: 768px;
     .gallery-section-image:nth-child(1) {
       grid-column: span 2;
     }
@@ -170,20 +207,29 @@
       grid-row: 3;
     }
   }
-}
-@media (width >= 1024px) {
-  .gallery-section {
+  @media (width >= 1024px) {
     max-block-size: 1048px;
   }
 }
-@media (width >= 768px) {
-  .gallery-section {
-    max-block-size: 768px;
+.gallery {
+  @media (width >= 768px) {
+    .text-block__title {
+      margin-block-end: 20px;
+    }
   }
 }
 
 .image {
-  inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.footer-title {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vw;
+  min-height: 668px;
 }

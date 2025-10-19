@@ -22,10 +22,17 @@ h2{
   font-weight: var(--font-weight-accident);
 }
 h3 {
-  font-size: var(--font-size-general);
-  font-weight: var(--font-weight-accident);
+  
 }
-
+figure{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+img{
+   margin:0;
+  padding:0; 
+}
 h1,
 h2,
 h3,
@@ -34,6 +41,7 @@ h5,
 h6,
 p {
   margin: 0;
+  font-size: 1em;
 }
 
 ul {
