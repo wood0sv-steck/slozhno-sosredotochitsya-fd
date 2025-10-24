@@ -8,12 +8,16 @@
   background-size: cover;
   background-attachment: fixed;
 }
-
+.theme-light {
+  .rec-decoration {
+    display: none;
+  }
+}
 .rec-decoration {
   position: absolute;
   top: var(--indention-global);
   right: calc(var(--indention-global) + 18px);
-  color: var(--color-title-accident);
+  color: var(--color-rec-decoration);
   font-family: "IBM Plex Mono";
   font-weight: 400;
   font-size: 18px;
@@ -33,10 +37,13 @@
   height: 9px;
   border-radius: 100%;
   box-shadow: 0px 0px 4px 2px;
-  background-color: var(--color-title-accident);
+  background-color: var(--color-rec-decoration);
   @media (width >= 768px) {
     right: -20px;
   }
+}
+.decorated-zone{
+ position: relative;
 }
 .decorated-zone::before {
   content: "";
@@ -48,11 +55,12 @@
   border-top: 1px solid var(--color-title-accident);
   border-right: 1px solid var(--color-title-accident);
 }
+
 .decorated-zone::after {
   content: "";
   position: absolute;
   bottom: var(--indention-global);
-  left: var(--indention-global);
+  left: 0;
   width: 25px;
   height: 25px;
   border-bottom: 1px solid var(--color-title-accident);
@@ -61,24 +69,23 @@
 .header {
   position: relative;
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr;
-  grid-template-rows: 37% min-content 31%;
-  min-height: 668px;
-  max-height: 100vw;
+  grid-template-rows: 1fr min-content 1fr;
+  max-height: var(--intro-height);
+  height: 100vh;
   @media (width >= 768px) {
-    grid-template-rows: 1fr min-content 1fr;
-    min-height: 1024px;
-    margin-inline-start: -20px;
-  }
-  @media (width >= 1024px) {
-    grid-template-rows: 1fr min-content 1fr;
-    min-height: 768px;
+    block-size: var(--intro-height);
   }
 }
 .header__theme-menu {
-  display: grid;
+  display: flex;
   align-self: center;
-  justify-self: end;
+  justify-self: flex-end;
+  padding-block-start: 7px;
+  @media (width >= 768px){
+   padding-block-start: 19px;
+  }
   @media (width >= 1024px) {
     align-self: start;
     justify-self: center;
@@ -87,12 +94,11 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  justify-self: flex-end;
-  gap: 13px;
+  gap: 14px;
   @media (width >= 1024px) {
     display: flex;
     flex-direction: row;
-    margin-block-start: 20px;
+     gap: 10px;
   }
 }
 .header__theme-menu-button_active {
@@ -115,7 +121,6 @@
 }
 .title {
   display: grid;
-  align-self: start;
   color: var(--color-title);
   font-family: "IBM Plex Mono";
   font-weight: var(--font-weight-accident);
@@ -126,10 +131,17 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
+.header > .title {
+  @media (width >= 768px) {
+    margin-inline-start: -20px;
+  }
+}
+
 .header__title-paragraph {
   display: grid;
   align-self: center;
   max-width: 365px;
+  padding-block-end: 15px;
   font-size: var(--font-size-general);
   @media (width >= 768px) {
     justify-self: end;
@@ -146,8 +158,12 @@
 }
 .main {
   display: grid;
-  margin-block-start:var(--indention-header) ;
+  margin-block-start: var(--indention-header);
   gap: var(--indention-section);
+  margin-block-end: var(--indention-header);
+}
+.word-shadow {
+  text-shadow: 2px 2px var(--word-shadow);
 }
 .content-section {
   display: grid;
@@ -192,13 +208,14 @@
     }
   }
 }
-.gallery-section-image {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
 }
-.gallery {
-  display:grid;
+.text-block-gallery__title {
+  margin-block-end: var(--indention-global);
 }
 .gallery-section {
   display: grid;
@@ -206,9 +223,7 @@
   gap: var(--indention-global);
   @media (width >= 768px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     gap: var(--indention-global);
-    max-block-size: 100%; 
     .gallery-section-image:nth-child(1) {
       grid-column: span 2;
     }
@@ -229,29 +244,16 @@
       grid-row: 3;
     }
   }
-  @media (width >= 1024px) {
-    max-block-size: 100%;
-  } 
-}
-
-.image {
-  display: block;
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
 }
 
 .footer-title {
-  position: relative;
+  
   display: grid;
   justify-content: center;
   align-items: center;
-  min-height: 668px;
-  max-height: 100vw;
+  max-height: var(--intro-height);
+  height: 100vh;
   @media (width >= 768px) {
-    min-height: 1024px;
-  }
-  @media (width >= 1024px) {
-    min-height: 768px;
+    block-size: var(--intro-height);
   }
 }
