@@ -1,5 +1,6 @@
 :root.theme-dark {
   --background-image-page: url("../images/cover-image-dark.png");
+  --background-color-page:#000028;
   --bacground-color-title: #ff0070;
   --color-title: #db00ff;
   --color-title-accident: #ff0070;
@@ -13,6 +14,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background-image-page: url("../images/cover-image-dark.png");
+    --background-color-page:#000028;
     --bacground-color-title: #ff0070;
     --color-title: #db00ff;
     --color-title-accident: #ff0070;

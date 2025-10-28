@@ -1,5 +1,6 @@
 :root.theme-light {
   --background-image-page: url("../images/cover-image-light.png");
+  --background-color-page:#FF8DCB;
   --bacground-color-title: #ff8dcb;
   --color-title: #ffc2e6;
   --color-title-accident: #353430;
@@ -13,6 +14,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background-image-page: url("../images/cover-image-light.png");
+     --background-color-page:#FF8DCB;
     --bacground-color-title: #ff8dcb;
     --color-title: #ffc2e6;
     --color-title-accident: #353430;

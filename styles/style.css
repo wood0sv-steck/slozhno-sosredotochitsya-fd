@@ -2,7 +2,7 @@
   position: relative;
   padding-inline-start: var(--indention-global);
   padding-inline-end: var(--indention-global);
-  background-color: #000028;
+  background-color: var(--background-color-page);
   background-image: var(--background-image-page);
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,7 +18,7 @@
   top: var(--indention-global);
   right: calc(var(--indention-global) + 18px);
   color: var(--color-rec-decoration);
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -122,7 +122,7 @@
 .title {
   display: grid;
   color: var(--color-title);
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", sans-serif;
   font-weight: var(--font-weight-accident);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
