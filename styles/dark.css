@@ -13,15 +13,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-image-page: url("../images/cover-image-dark.png");
-    --background-color-page:#000028;
-    --bacground-color-title: #ff0070;
-    --color-title: #db00ff;
-    --color-title-accident: #ff0070;
-    --color-title-shadow: #ff0070;
-    --color-menu: #ff0070;
-    --color-text-paragraph: #f1b2ce;
-    --color-text-title: #000028;
-    --color-rec-decoration: #ff0070;
+ --background-image-page: url("../images/cover-image-dark.png");
+  --background-color-page:#000028;
+  --bacground-color-title: #ff0070;
+  --color-title: #db00ff;
+  --color-title-accident: #ff0070;
+  --color-title-shadow: #ff0070;
+  --color-menu: #ff0070;
+  --color-text-paragraph: #f1b2ce;
+  --color-text-title: #000028;
+  --color-rec-decoration: #ff0070;
   }
 }
