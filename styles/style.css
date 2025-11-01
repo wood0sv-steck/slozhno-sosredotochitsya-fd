@@ -160,10 +160,10 @@
 .word-shadow {
   text-shadow: 2px 2px var(--word-shadow);
 }
-.word-shadow:hover{
+.word-shadow:hover {
   border-bottom:1px solid var(--word-shadow-link);
 }
-.word-shadow:focus{
+.word-shadow:focus {
   outline: solid var(--word-shadow-link);
  }
 .content-section {
