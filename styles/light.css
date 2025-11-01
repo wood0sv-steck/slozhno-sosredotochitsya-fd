@@ -8,8 +8,9 @@
   --color-title-shadow: #ff8dcb;
   --color-text-paragraph: #353430;
   --color-text-title: #353430;
-  --word-shadow: #ff8dcb;
+  --word-shadow: #FF8DCB;
   --color-rec-decoration: transparent;
+  --word-shadow-link:#353430;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -22,7 +23,9 @@
     --color-title-shadow: #ff8dcb;
     --color-text-paragraph: #353430;
     --color-text-title: #353430;
-    --word-shadow: #ff8dcb;
+    --word-shadow: #FF8DCB;
     --color-rec-decoration: transparent;
+    --word-shadow-link:#353430;
   }
 }
+
